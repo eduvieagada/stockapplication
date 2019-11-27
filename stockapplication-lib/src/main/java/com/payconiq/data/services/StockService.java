@@ -1,4 +1,4 @@
-package com.payconiq.services;
+package com.payconiq.data.services;
 
 import com.payconiq.entities.Stock;
 import com.payconiq.exceptions.NotFoundException;

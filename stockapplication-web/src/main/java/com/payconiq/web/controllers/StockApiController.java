@@ -2,7 +2,8 @@ package com.payconiq.web.controllers;
 
 import com.payconiq.entities.Stock;
 import com.payconiq.exceptions.NotFoundException;
-import com.payconiq.services.StockService;
+import com.payconiq.data.services.StockService;
+import com.payconiq.web.models.ErrorResponse;
 import com.payconiq.web.models.StockViewModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -46,7 +47,15 @@ public class StockApiController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Stock> Update(@PathVariable("id") Long id, @Valid @RequestBody StockViewModel model) {
+    public ResponseEntity Update(@PathVariable("id") Long id, @Valid @RequestBody StockViewModel model) {
+        try {
+            Stock stock = stockService.updateStock(id, model);
+
+            return ResponseEntity.ok(stock);
+        } catch (IllegalArgumentException ex) {
+            ErrorResponse errorResponse = new ErrorResponse(ex.getMessage());
+            return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+        }
 
     }
 }

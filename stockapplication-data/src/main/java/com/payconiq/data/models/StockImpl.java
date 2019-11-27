@@ -1,4 +1,4 @@
-package com.payconiq.models;
+package com.payconiq.data.models;
 
 import com.payconiq.entities.Stock;
 

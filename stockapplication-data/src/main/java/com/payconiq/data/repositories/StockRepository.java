@@ -1,9 +1,7 @@
-package com.payconiq.repositories;
+package com.payconiq.data.repositories;
 
-import com.payconiq.models.StockImpl;
+import com.payconiq.data.models.StockImpl;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface StockRepository extends CrudRepository<StockImpl, Long> {
 }

@@ -1,9 +1,9 @@
-package com.payconiq.services;
+package com.payconiq.data.services;
 
 import com.payconiq.entities.Stock;
 import com.payconiq.exceptions.NotFoundException;
-import com.payconiq.models.StockImpl;
-import com.payconiq.repositories.StockRepository;
+import com.payconiq.data.models.StockImpl;
+import com.payconiq.data.repositories.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
