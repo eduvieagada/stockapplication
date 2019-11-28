@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Include Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div id="app">
+        <div class="container">
+            <h1>{{ title }}</h1>
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Current Price</th>
+                </tr>
+                </thead>
+                <tbody v-for="stock in stocks" :key="stock.id">
+                <tr>
+                    <td>
+                        {{ stock.id }}
+                    </td>
+                    <td>
+                        {{ stock.name }}
+                    </td>
+                    <td>
+                        {{ stock.currentPrice }}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/vue.js"></script>
+<script src="js/axios.min.js"></script>
+<script src="js/babel.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
